@@ -13,8 +13,9 @@ class TabbarViewController: TCBaseTabBarController{
     
     struct TCTabBarItem {
         let pic :String
+        let picSelected :String
         let title:String
-        let controller :Any
+        let controller :AnyObject
     }
     
     override func viewDidLoad() {
@@ -22,80 +23,48 @@ class TabbarViewController: TCBaseTabBarController{
 
         self.tabBar.frame = CGRectMake(0, tabBarY, LLGScreenW, LLGScreenH)
         self.setTabBarBgColor(UIColor.greenColor())
-        
-        
 
-        let tabbarItem0 = TCTabBarItem(pic:"tab_home.png",title:"首页",controller:AddressViewController())
-        let tabbarItem1 = TCTabBarItem(pic:"tab_person_down",title:"个人中心",controller:MyInfoViewController())
-        let tabbarItem2 = TCTabBarItem(pic:"tab_person_down",title:"个人中心",controller:MyInfoViewController())
-        var tabbarItems:[TCTabBarItem] = [tabbarItem0,tabbarItem1,tabbarItem2]
-//        self.viewControllers = UIViewController[]()
+        let tabbarItem0 = TCTabBarItem(pic:"tab_home.png",picSelected: "tab_home_down", title:"首页",controller:AddressViewController())
+        let tabbarItem1 = TCTabBarItem(pic:"tab_list",picSelected: "tab_list_down",title:"项目列表",controller: ListViewController())
+        let tabbarItem2 = TCTabBarItem(pic:"tab_person",picSelected: "tab_person_down",title:"个人中心",controller:MyInfoViewController())
         
-//        此处需要调查viewControllers是否为空，如何添加
-
-//        添加
-        for index in 0...2 {
-            let nav = UINavigationController(rootViewController: tabbarItems[index].controller as! TCBaseViewController)
-            self.viewControllers!.append(nav)
-            print("controlls \(self.viewControllers)")
-        }
+        let nav1 = UINavigationController(rootViewController: tabbarItem0.controller as! AddressViewController)
+        let nav2 = UINavigationController(rootViewController: tabbarItem1.controller as! ListViewController)
+        let nav3 = UINavigationController(rootViewController: tabbarItem2.controller as! MyInfoViewController)
+  
+        self.viewControllers = [nav1,nav2,nav3]
+        let tabBar = self.tabBar
+        let item0  = tabBar.items![0]
+        let item1 = tabBar.items![1]
+        let item2 = tabBar.items![2]
         
-        let tabBars = self.tabBar.items![0]
+        item0.image = UIImage(imageLiteral:tabbarItem0.pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        item0.title = tabbarItem0.title
+        item0.selectedImage = UIImage(imageLiteral: tabbarItem0.picSelected).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-        print("tabbar \(tabBars.title)")
-//        let item0  = tabBar.items![0]
-//        let item1 = tabBar.items![1]
-//        let item2 = tabBar.items![2]
-
-        /*
         
-        let tabBarItems = self.tabBar
-
+        item1.image = UIImage(imageLiteral: tabbarItem1.pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        item1.title = tabbarItem1.title
+        item1.selectedImage = UIImage(imageLiteral:tabbarItem1.picSelected).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         
-//        var arr:[Any] = [Any]()
-//        arr.append(tabbarItem0)
-//        arr.append(tabbarItem1)
-//        arr.append(tabbarItem2)
         
-        print("this is test:\(tabBarItems)")
+        item2.image = UIImage(imageLiteral: tabbarItem2.pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        item2.selectedImage = UIImage(imageLiteral: tabbarItem2.picSelected).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        item2.title = tabbarItem2.title
         
-//        let item0  = tabBarItems.items![0]
-//        let item1 = tabBarItems.items![1]
-//        let item2 = tabBarItems.items![2]
+        //        let item1 = tabBar.items[1]
         
-        for index in 0...2{
-            tabBarItems.items![index].title = tabbar[index].title
-            tabBarItems.items![index].image = UIImage(imageLiteral:tabbar[index].pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            tabBarItems.items![index].selectedImage = UIImage(imageLiteral: tabbar[index].pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        }
-        */
-        /**
-        
-        item0.title = tabbarItem0.1
-        item0.image = UIImage(imageLiteral:tabbarItem0.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        item0.selectedImage = UIImage(imageLiteral: tabbarItem0.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-
-        item1.title = tabbarItem1.1
-        item1.image = UIImage(imageLiteral:tabbarItem1.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        item1.selectedImage = UIImage(imageLiteral:tabbarItem1.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        
-        item2.title = tabbarItem2.1
-        item2.image = UIImage(imageLiteral: tabbarItem2.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        item2.selectedImage = UIImage(imageLiteral:tabbarItem2.0).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        let mView = UIView.init(frame: CGRectMake(0, 0, LLGScreenW, LLGScreenH))
+        mView.backgroundColor = UIColor.greenColor()
+        self.tabBar.insertSubview(mView, atIndex: 0)
         
         item0.titlePositionAdjustment = UIOffsetMake(2, 5)
         item1.titlePositionAdjustment = UIOffsetMake(2, 5)
         item2.titlePositionAdjustment = UIOffsetMake(2, 5)
-    **/
-        // Do any additional setup after loading the view.
+       
         
     }
 
-    func setTabbarItem(content:AnyObject ,item:UITabBarItem) {
-//        item.title = content.title
-//        item.image = UIImage(imageLiteral:content.pic).imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -26,6 +26,8 @@ class TCBaseTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.grayColor()], forState:.Selected)
         
+//        self.tabBar.items[0].title
+        
         // Do any additional setup after loading the view.
         
         /*

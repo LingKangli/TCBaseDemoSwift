@@ -25,6 +25,7 @@
 		661CF81D1CC8A6D500C29AEB /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CF81B1CC8A6D500C29AEB /* ListTableViewCell.swift */; };
 		661CF81E1CC8A6D500C29AEB /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 661CF81C1CC8A6D500C29AEB /* ListTableViewCell.xib */; };
 		668D091A1CC4BC2B00A8D4B2 /* AFRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668D09191CC4BC2B00A8D4B2 /* AFRequestTest.swift */; };
+		66AB87891CCB2A2300FB2F54 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66AB87881CCB2A2300FB2F54 /* ListDetailViewController.swift */; };
 		66BFE0981CA3DEE20060915C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BFE0971CA3DEE20060915C /* AppDelegate.swift */; };
 		66BFE09D1CA3DEE20060915C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66BFE09B1CA3DEE20060915C /* Main.storyboard */; };
 		66BFE09F1CA3DEE20060915C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66BFE09E1CA3DEE20060915C /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		661CF81C1CC8A6D500C29AEB /* ListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListTableViewCell.xib; path = ChildrenPart/cell/ListTableViewCell.xib; sourceTree = "<group>"; };
 		668D09151CC4B68000A8D4B2 /* ElectricProSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ElectricProSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		668D09191CC4BC2B00A8D4B2 /* AFRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AFRequestTest.swift; path = Command/AFRequestTest.swift; sourceTree = "<group>"; };
+		66AB87881CCB2A2300FB2F54 /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListDetailViewController.swift; path = TCBase/ListDetailViewController.swift; sourceTree = "<group>"; };
 		66BFE0941CA3DEE20060915C /* ElectricProSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElectricProSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66BFE0971CA3DEE20060915C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66BFE09C1CA3DEE20060915C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				66D7E1DB1CA61CBF00D9D569 /* ProductDetailViewController.swift */,
 				66D7E1DD1CA61CE300D9D569 /* MyInfoViewController.swift */,
 				6611248B1CCA03D0006FBC5E /* MyInfoDetailViewController.swift */,
+				66AB87881CCB2A2300FB2F54 /* ListDetailViewController.swift */,
 			);
 			name = ChildrenPart;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				66BFE0981CA3DEE20060915C /* AppDelegate.swift in Sources */,
 				66F1C09D1CA8BB900083E875 /* ViewController.swift in Sources */,
 				6611243A1CC9D526006FBC5E /* TCBaseDelegate.swift in Sources */,
+				66AB87891CCB2A2300FB2F54 /* ListDetailViewController.swift in Sources */,
 				668D091A1CC4BC2B00A8D4B2 /* AFRequestTest.swift in Sources */,
 				66D7E1D61CA61BF700D9D569 /* AddressViewController.swift in Sources */,
 				66D7E1DC1CA61CBF00D9D569 /* ProductDetailViewController.swift in Sources */,
